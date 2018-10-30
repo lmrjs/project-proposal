@@ -1,0 +1,47 @@
+\section{Introduction}
+The primary goal of the project is to make meaningful use of language features not present in the conventional languages we have been exposed to. For this purpose, we have chosen to use Haskell, which is a purely-functional programming language with strong static type-checking.
+It is also a lazy language, designed to handle symbolic computation. It has built into it many of the features not present in plain Racket, only in the PLAI package, such as pattern-matching and algebraic data types, as well as others we implicitly use, such as immutability. This parallelism with Racket makes Haskell a great tool to use for the course CPSC 311. 
+
+\section{Milestones}
+
+\subsection{Background Research Proposal}
+For the 80\% level, we will create a comprehensive document outlining the steps to produce a parser and visualizer in Haskell. We will conduct research on how the Haskell language works, how to use parser-combinators, and suitable methods for implementing the visualization of the abstract syntax tree. 
+
+To learn the Haskell language, we will make use of the books \textit{\href{http://learnyouahaskell.com/chapters}{Learn You a Haskell for Great Good!}}, focusing mainly on the first eight chapters and chapter 11, and \textit{\href{http://book.realworldhaskell.org/read/}{Real World Haskell}} focusing mainly on chapters 1 through 4, 8, and 16 for using Parsec. Another useful resource as a reference to Haskell's features is the \href{https://en.wikibooks.org/wiki/Haskell}{Haskell Wikibook}. \href{https://www.haskell.org/hoogle/}{Hoogle}, an API search engine, will also be an invaluable resource for looking up function signatures from various common packages for Haskell. Finally, there is the \href{https://www.haskell.org/onlinereport/haskell2010/}{Haskell 2010 Language Report}, the full specification of the Haskell language, which we can reference if needed. In our document will be a short summary of particular constructs unique to Haskell that will be of use to us.
+
+Following this, we will learn how parser combinators work and briefly describe what they are. Some theoretical papers we can reference are "\href{http://www.cs.nott.ac.uk/~pszgmh/monparsing.pdf}{Monadic Parser Combinators}" or the shorter "\href{http://www.cs.nott.ac.uk/~pszgmh/pearl.pdf}{Monadic Parsing in Haskell}" by the same authors, as well as "\href{https://web.archive.org/web/20120401040711/http://legacy.cs.uu.nl/daan/download/parsec/parsec.pdf}{Parsec, a fast combinator parser}", the paper for the parsing library that we will use.
+
+To learn methods of AST visualization, we will look into making use of packages such as ghc-vis and gtk2hs to aid us in generating the graphical user interface. We will also need to make decisions on how we want our users to interact with our program, and the design style of this abstract syntax tree with the purpose of illustrating the details of an interpreter to our users.
+
+
+\subsection{Parsing FWAE in Haskell}
+For the 90\% level, we will implement a parser for FWAE using the Haskell library \href{https://github.com/haskell/parsec}{Parsec}. Before we begin, we must first install Haskell, configure our development environments, and familiarize ourselves with writing Haskell code. Once comfortable with the language, we will begin with the existing EBNF as specified in the \href{https://www.ugrad.cs.ubc.ca/~cs311/current/notes/in-class-06.rkt}{lecture code} and follow existing Parsec tutorials such as "\href{http://book.realworldhaskell.org/read/using-parsec.html}{Using Parsec}" from the \textit{Real World Haskell} book, the "\href{https://wiki.haskell.org/Parsing_a_simple_imperative_language}{Parsing a simple imperative language}" article, and the "\href{https://kunigami.blog/2014/01/21/an-introduction-to-the-parsec-library/}{An Introduction to the Parsec Language}" blog post. 
+
+Since the 100\% level involves creating the call tree, we will also need to implement an interpreter for FWAE. This will follow the structure of the interpreter implemented in class, only using Haskell patterns and idioms. 
+
+\subsection{Parse Tree and Call Tree Visualization in Haskell}
+For the 100\% level, we plan on implementing the visualizations for the parse tree and the call tree, which will consist of animations that demonstrate the process of interpreting a FWAE program. This will include a friendly interface where users can input their FWAE program. We plan on using either \href{http://felsin9.de/nnis/ghc-vis/}{ghc-vis} or \href{http://www.muitovar.com/gtk2hs/index.html}{gtk2hs} to visualize data structures in GHCi. We will follow the \href{http://felsin9.de/nnis/ghc-vis/thesis/thesis.pdf}{thesis} that details the motivation, implementation and evaluation of ghc-vis to further understand the core parts of the library.
+
+\subsection{Poster}
+For the poster, we plan to outline basic Haskell syntax and various unique features that are particularly useful for our task, as well as examples of how we made use of laziness in Haskell to traverse through the abstract syntax tree. We also plan on showing a demonstration of how parsing the FWAE program is done in Haskell, and mockups of how they would appear in our final product.
+
+
+\section{References}
+\begin{itemize}
+    \item Parsing a simple imperative language. \url{https://wiki.haskell.org/Parsing_a_simple_imperative_language}.
+    \item Simon Marlow. 2010. Haskell 2010 Language Report. \url{https://www.haskell.org/onlinereport/haskell2010/}.
+    \item Brent Yorgey. Introduction to Haskell. \url{https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell}.
+    \item Lipovaca Miran. 2012. Learn you a Haskell for Great Good!: A Beginner's Guide, San Francisco, CA: No Starch Press. \url{http://learnyouahaskell.com/}.
+    \item Bryan OSullivan, Don Stewart, and John Goerzen. 2009. Real World Haskell, Sebastopol, CA: OReilly. \url{http://book.realworldhaskell.org/}.
+    \item Haskell. Wikibooks, The Free Textbook Project. Retrieved August 25, 2018. \url{https://en.wikibooks.org/w/index.php?title=Haskell&oldid=3454062}.
+    \item Graham Hutton and Eric Meijer. 1996. Monadic Parser Combinators. Department of Computer Science, University of Nottingham. \url{http://www.cs.nott.ac.uk/~pszgmh/monparsing.pdf}.
+    \item Graham Hutton and Eric Meijer. 1998. Monadic Parsing in Haskell. The Journal of Functional Programming. New York: Cambridge University Press New York. \url{http://www.cs.nott.ac.uk/~pszgmh/pearl.pdf}.
+    \item Daan Leijen. October 4, 2001. Parsec, a fast parser combinator. Deptartment of Computer Science, University of Utrecht. \url{https://web.archive.org/web/20120401040711/http://legacy.cs.uu.nl/daan/download/parsec/parsec.pdf}.
+    \item Parsec. August 2018. Retrieved October 25, 2018. \url{https://github.com/haskell/parsec}.
+    \item Guilherme Kunigami. 2018. An Introduction to the Parsec Library. (May 2018). Retrieved October 25, 2018. \url{https://kunigami.blog/2014/01/21/an-introduction-to-the-parsec-library/}.
+    \item Dennis Felsing. The ghc-vis User Guide. Retrieved October 25, 2018. \url{http://felsin9.de/nnis/ghc-vis/}.
+    \item Dennis Felsing. September 27, 2012. Visualization of Lazy Evaluation and Sharing. Karlsruhe Institute of Technology. \url{http://felsin9.de/nnis/ghc-vis/thesis/thesis.pdf}.
+    \item Ian Main. Tony Gale. Hans van Thiel. Gtk2Hs Tutorial. Retrieved October 25, 2018.
+    \url{http://www.muitovar.com/gtk2hs/index.html}.
+    \item Hoogle. 2013. Retrieved October 29, 2018. \url{https://www.haskell.org/hoogle/}.
+\end{itemize}

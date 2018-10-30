@@ -1,0 +1,36 @@
+\documentclass[format=acmsmall, review=false, nonacm=false, screen=true]{acmart}
+
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+\setcopyright{none}
+
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+\title{Proposal: Visualizing the FWAE Language}
+
+\author{Megha Singhania}
+\affiliation{ t4u0b, t4u0b@ugrad.cs.ubc.ca}
+\author{Jonathan Chan}
+\affiliation{r5x9a@ugrad.cs.ubc.ca}
+\author{Samuel Or}
+\affiliation{u4h1b, or.samuel1@gmail.com}
+
+\author{Xuhao Chen}
+\affiliation{d4i0b@ugrad.cs.ubc.ca}
+
+\begin{abstract}
+\vspace{0.65em}
+
+Our project is of the fourth type: to create a substantial program in an esoteric language. It strives to produce an educational tool for the CPSC 311 course by providing parse tree and call tree visualizations, complete with environment illustrations, for the FWAE course language, which includes first-class functions but not mutation, laziness, or recursion. The parser and visualizer will both be implemented using Haskell, making use of the lazy and functional features of the language, as well as well-known libraries for parsing and visualization.
+\end{abstract}
+
+\maketitle
+
+\input{samplebody-journals}
+
+\end{document}
+
